@@ -348,23 +348,6 @@ static bool makeAtlas(const std::vector<GlyphGeometry> &glyphs, const std::vecto
         }
     }
 
-#ifndef MSDF_ATLAS_NO_ARTERY_FONT
-    if (config.arteryFontFilename) {
-        ArteryFontExportProperties arfontProps;
-        arfontProps.fontSize = config.emSize;
-        arfontProps.pxRange = config.pxRange;
-        arfontProps.imageType = config.imageType;
-        arfontProps.imageFormat = config.imageFormat;
-        arfontProps.yDirection = config.yDirection;
-        if (exportArteryFont<float>(fonts.data(), fonts.size(), bitmap, config.arteryFontFilename, arfontProps))
-            fputs("Artery Font file generated.\n", stderr);
-        else {
-            success = false;
-            fputs("Failed to generate Artery Font file.\n", stderr);
-        }
-    }
-#endif
-
     return success;
 }
 
