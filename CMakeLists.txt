@@ -104,7 +104,7 @@ target_compile_definitions(msdf-atlas-gen PUBLIC
 )
 target_include_directories(msdf-atlas-gen INTERFACE
     $<INSTALL_INTERFACE:include>
-    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>
+    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/msdf-atlas-gen>
 )
 set_property(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} PROPERTY VS_STARTUP_PROJECT msdf-atlas-gen)
 
